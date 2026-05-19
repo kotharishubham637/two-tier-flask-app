@@ -12,7 +12,7 @@ RUN apt-get update \
 
 # Copy the requirements file into the container
 COPY requirements.txt .
-
+COPY message.sql /docker-entrypoint-initdb.d/message.sql
 # Install app dependencies
 RUN pip install mysqlclient
 RUN pip install --no-cache-dir -r requirements.txt
